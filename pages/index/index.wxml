@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    </view>
+</view>
+<view class="bd_bnr">
+  <view>
+    <image src="/public/images/mini11.jpg"></image>
+  </view>
+</view>
+<view class="flex-wrp" style="display:flex;flex-direction:row;">
+  <view class="flex-item demo-text-1">
+    <image class="navIcon" src="/public/images/huiyuan.png"></image>
+    <text class="nav_txt">会员</text>
+  </view>
+  <view class="flex-item demo-text-2">
+    <image class="navIcon" src="/public/images/tansuo.png"></image>
+    <text class="nav_txt">探索</text>
+  </view>
+  <view class="flex-item demo-text-3">
+    <image class="navIcon" src="/public/images/ceshi.png"></image>
+    <text class="nav_txt">测试</text>
+  </view>
+  <view class="flex-item demo-text-4">
+    <image class="navIcon" src="/public/images/shangcheng.png"></image>
+    <text class="nav_txt">商城</text>
+  </view>
+  <view class="flex-item demo-text-5">
+    <image class="navIcon" src="/public/images/fenxiang.png"></image>
+    <text class="nav_txt">分享</text>
+  </view>
+</view>
+<view style="height:26rpx;background:#f0f1f5;"></view>
+<view class="tuiJView">
+  <image class="tuiJVieW-img" src="/public/images/tuiJ.png"></image>
+  <view style="position:absolute;transform:translateX(10%)">
+    <image class="tuiJVieW-Banimg" src="/public/images/mini11.jpg"></image>
+    <text class="tuiJTxt1">徒手胸肌训练初级</text>
+    <text class="tuiJTxt2">K2 初学 · 16分钟 · 2273.2 万人已学习</text>
+  </view>
+</view>

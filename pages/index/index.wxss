@@ -1,0 +1,74 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: #aaa;
+}
+.bd_bnr{
+  display: flex;
+  justify-content: center;
+  padding:40rpx 64rpx;
+  box-sizing: border-box;
+}
+.bd_bnr image{
+  width:625rpx;
+  height:290rpx;
+  margin:0 auto;
+  border-radius:20rpx;
+}
+.navIcon{
+  width:120rpx;
+  height:120rpx;
+}
+.flex-wrp{
+  padding: 18rpx 56rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.flex-item{
+  text-align: center;
+}
+.tuiJView{
+  position:relative;
+  padding: 125rpx 0 20rpx 0;
+  box-sizing: border-box;
+}
+.tuiJVieW-img{
+  position: absolute;
+  top:0;
+  left: 46rpx;
+  width: 55rpx;
+  height: 105rpx;
+}
+.tuiJVieW-Banimg{
+  display: block;
+  width:625rpx;
+  height:300rpx;
+  margin: 0 auto;
+  border-radius: 25rpx;
+}
+.tuiJTxt1{
+  position: absolute;
+  bottom: 60rpx;
+  left: 30rpx;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+.tuiJTxt2{
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  color: #f00;
+  font-size: 18rpx;
+  font-weight: 700;
+}
