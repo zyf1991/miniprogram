@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
+    "pages/saymood/index",
     "pages/grow/index",
     "pages/my/index"
     
@@ -17,11 +18,11 @@
     "selectedColor":"#23a9f0",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页",
+      "text": "首页2",
       "iconPath": "/public/images/indexWX.png",
       "selectedIconPath": "/public/images/indexYX.png"
     }, {
-      "pagePath": "pages/logs/logs",
+      "pagePath": "pages/saymood/index",
       "text": "倾诉",
       "iconPath": "/public/images/qingsWX.png",
       "selectedIconPath": "/public/images/qingsYX.png"
