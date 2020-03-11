@@ -1,11 +1,22 @@
-// pages/grow/index.js
+// pages/addplan/index.js
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    date: '2019-03-01',
+  },
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
   },
 
   /**
@@ -62,11 +73,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  /**
-   * 用户添加计划
-   */
-  addPlan: function (event) {
-    wx.navigateTo({ url: '/pages/addplan/index', })
   }
 })

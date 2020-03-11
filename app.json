@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/addplan/index",
     "pages/logs/logs",
+    "pages/saymood/index",
     "pages/grow/index",
-    "pages/my/index"
+    "pages/my/index",
+    "pages/index/index"
     
   ],
   "window": {
@@ -21,7 +23,7 @@
       "iconPath": "/public/images/indexWX.png",
       "selectedIconPath": "/public/images/indexYX.png"
     }, {
-      "pagePath": "pages/logs/logs",
+      "pagePath": "pages/saymood/index",
       "text": "倾诉",
       "iconPath": "/public/images/qingsWX.png",
       "selectedIconPath": "/public/images/qingsYX.png"

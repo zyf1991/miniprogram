@@ -1,4 +1,4 @@
-// pages/grow/index.js
+// pages/saymood/index.js
 Page({
 
   /**
@@ -62,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  /**
-   * 用户添加计划
-   */
-  addPlan: function (event) {
-    wx.navigateTo({ url: '/pages/addplan/index', })
   }
 })
