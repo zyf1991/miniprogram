@@ -29,6 +29,9 @@
   width:120rpx;
   height:120rpx;
 }
+.nav_txt{
+  font-size:14px;
+}
 .flex-wrp{
   padding: 18rpx 56rpx;
   justify-content: space-between;

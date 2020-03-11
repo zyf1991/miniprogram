@@ -1,2 +1,8 @@
 <!--pages/grow/index.wxml-->
-<text>pages/grow/index.wxml</text>
+<view class="grow_top">
+  <view>
+    <text>2020年3月8日</text>
+    <text>星期日</text>
+    <text>【点击查看成长计划使用说明】</text>
+  </view>
+</view>

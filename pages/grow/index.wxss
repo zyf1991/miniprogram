@@ -1,1 +1,19 @@
 /* pages/grow/index.wxss */
+.grow_top{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:652rpx;
+  height:317rpx;
+  margin:0 auto;
+  margin-top:66rpx;
+  border:1px solid #362e2b;
+  border-radius:25rpx;
+}
+.grow_top>view text{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:700;
+}
