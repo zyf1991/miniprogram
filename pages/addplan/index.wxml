@@ -1,0 +1,27 @@
+<!--pages/addplan/index.wxml-->
+<text>pages/addplan/index.wxml</text>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  
+  <view class="section">
+    <view class="section__title">计划内容</view>
+    <input name="plan_title" placeholder="please input here" />
+  </view>
+
+  <view class="section">
+    <view class="section__title">日期选择器</view>
+    <picker name="plan_etime" mode="date" value="{{date}}" start="2020-03-01" end="2020-12-31" bindchange="bindDateChange">
+      <view  class="picker">
+        当前选择: {{date}}
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">计划描述</view>
+    <input name="plan_desc" placeholder="please input here" />
+  </view>
+  
+  <view class="btn-area">
+    <button  formType="submit">添加计划</button>
+  </view>
+</form>

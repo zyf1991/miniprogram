@@ -5,4 +5,8 @@
     <text>星期日</text>
     <text>【点击查看成长计划使用说明】</text>
   </view>
+
+  
+
 </view>
+<view id="addPlan" data-hi="WeChat" bindtap="addPlan"> 添加计划 </view>

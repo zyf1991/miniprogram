@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/addplan/index",
     "pages/logs/logs",
     "pages/saymood/index",
     "pages/grow/index",
-    "pages/my/index"
+    "pages/my/index",
+    "pages/index/index"
     
   ],
   "window": {
