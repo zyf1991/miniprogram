@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: '2019-03-01',
+    date: '计划完成时间',
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -85,3 +85,51 @@ Page({
 
   }
 })
+
+
+Component({
+  data: {
+      showTopTips: false,
+
+
+      isAgree: false,
+      formData: {
+
+      },
+      rules: [{
+          name: 'plan_title',
+          rules: {required: true, message: 'plan_title必填'},
+      },
+      {
+        name: 'plan_title',
+          rules: {required: true, message: 'plan_title必填'},
+      }
+    ]
+  },
+  methods: {
+      formInputChange(e) {
+          const {field} = e.currentTarget.dataset
+          this.setData({
+              [`formData.${field}`]: e.detail.value
+          })
+      },
+      submitForm() {
+          this.selectComponent('#form').validate((valid, errors) => {
+              console.log('valid', valid, errors)
+              if (!valid) {
+                  const firstError = Object.keys(errors)
+                  if (firstError.length) {
+                      this.setData({
+                          error: errors[firstError[0]].message
+                      })
+  
+                  }
+              } else {
+                  wx.showToast({
+                      title: '校验通过'
+                  })
+              }
+          })
+      }
+  }
+});

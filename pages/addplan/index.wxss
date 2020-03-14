@@ -1,1 +1,22 @@
 /* pages/addplan/index.wxss */
+.section_far{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top:60rpx;
+}
+.input_planCon{
+  display: inline-block;
+  vertical-align: middle;
+  width:510rpx;
+  height:90rpx;
+  margin-left: 25rpx;
+  padding-left:30rpx;
+  color:#000;
+  border:2px solid #ddd;
+  border-radius:30rpx;
+  box-sizing:border-box;
+}
+.h20{
+  height:20px;
+}
