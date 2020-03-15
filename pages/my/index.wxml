@@ -1,17 +1,24 @@
 <!--pages/my/index.wxml-->
-<!-- 背景图 + 信息 start -->
-<view class="my_top">
-  <view style="display:flex;align-items:center;">
-    <view class="my_topPic">
-      <image src="/public/images/mini11.jpg"></image>
-    </view>
-    <view class="my_topName">
-      <view class="topName">
-        olive SF
-        <view style="display:inline-block;margin-left:10rpx;padding:1px 12px;color:#000;font-size:14px;border:1px solid #000;border-radius:20px;box-sizing:border-box;">编辑资料</view>
+<!-- 需要使用 button 来授权登录 -->
+<view wx:if="{{isHide}}">
+<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">未登录/请登录</button>
+</view>
+<view wx:else>
+  <!-- 背景图 + 信息 start -->
+  <view class="my_top">
+    <view style="display:flex;align-items:center;">
+      <view class="my_topPic">
+        <image src="/public/images/mini11.jpg"></image>
+      </view>
+      <view class="my_topName">
+        <view class="topName">
+          olive SF
+          <view style="display:inline-block;margin-left:10rpx;padding:1px 12px;color:#000;font-size:14px;border:1px solid #000;border-radius:20px;box-sizing:border-box;">编辑资料</view>
+        </view>
       </view>
     </view>
   </view>
+  <!-- 背景图 + 信息 end -->
 </view>
-<!-- 背景图 + 信息 end -->
+
 
