@@ -7,27 +7,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: '计划完成时间',
+    // date: '计划完成时间',
   },
-  bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      date: e.detail.value
-    })
-  },
-  formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    wx.request({
-      url: 'http://local.miniadmin.com/api/plan',
-      method:'post',
-      data: {
-        formvalue: e.detail.value
-      },
-      success: function (res) {
-        console.log(res);
-      }
-    })
-  },
+  // bindDateChange: function (e) {
+  //   console.log('picker发送选择改变，携带值为', e.detail.value)
+  //   this.setData({
+  //     date: e.detail.value,
+  //     [`formData.date`]: e.detail.value
+  //   })
+  // },
+  // formSubmit: function (e) {
+  //   console.log('form发生了submit事件，携带数据为：', e.detail.value)
+  //   wx.request({
+  //     url: 'http://local.miniadmin.com/api/plan',
+  //     method:'post',
+  //     data: {
+  //       formvalue: e.detail.value
+  //     },
+  //     success: function (res) {
+  //       console.log(res);
+  //     }
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面加载
@@ -90,18 +91,13 @@ Page({
 Component({
   data: {
       showTopTips: false,
-
-
       isAgree: false,
       formData: {
 
       },
+
       rules: [{
           name: 'plan_title',
-          rules: {required: true, message: 'plan_title必填'},
-      },
-      {
-        name: 'plan_title',
           rules: {required: true, message: 'plan_title必填'},
       }
     ]
@@ -112,6 +108,26 @@ Component({
           this.setData({
               [`formData.${field}`]: e.detail.value
           })
+      },
+      bindDateChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+          date: e.detail.value,
+          [`formData.date`]: e.detail.value
+        })
+      },
+      formSubmit: function (e) {
+        console.log('form发生了submit事件，携带数据为：', e.detail.value)
+        wx.request({
+          url: 'http://local.miniadmin.com/api/plan',
+          method:'post',
+          data: {
+            formvalue: e.detail.value
+          },
+          success: function (res) {
+            console.log(res);
+          }
+        })
       },
       submitForm() {
           this.selectComponent('#form').validate((valid, errors) => {
