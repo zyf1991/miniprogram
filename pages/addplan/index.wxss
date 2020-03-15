@@ -20,3 +20,6 @@
 .h20{
   height:20px;
 }
+mp-form view{
+  width: 217px;
+}

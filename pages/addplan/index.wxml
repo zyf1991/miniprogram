@@ -3,35 +3,25 @@
 
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="section_far">
-    <view class="section">
-      <image src="/public/images/input_planConImg1.png" style="vertical-align:middle;width:100rpx;height:100rpx;"></image>
+    <view class="section" style="position:reletive;">
+      <image src="/public/images/input_planConImg1.png" style="width:100rpx;height:100rpx;position:absolute;top:39px;left:26px;"></image>
 
       <mp-form id="form" rules="{{rules}}" models="{{formData}}"  style="width:510rpx">
           <mp-cell show-error prop="plan_title" title="" ext-class="">
               <input class="input_planCon" bindinput="formInputChange" data-field="plan_title"  placeholder="计划内容" placeholder-style="color:#000;" />
           </mp-cell>
         </mp-form>
-      <!-- <input class="input_planCon" name="plan_title" placeholder="计划内容" placeholder-style="color:#000;" /> -->
     </view>
   </view>
 
   <view style="h20"> </view>
-
-  <!-- <view class="section">
-    <view class="section__title">日期选择器</view>
-    <picker name="plan_etime" mode="date" value="{{date}}" start="2020-03-01" end="2020-12-31" bindchange="bindDateChange">
-      <view  class="picker">
-        当前选择: {{date}}
-      </view>
-    </picker>
-  </view> -->
 
   <view class="section_far">
     <view class="section">
       <image src="/public/images/input_planConImg2.png" style="vertical-align:middle;width:100rpx;height:100rpx;"></image>
       <view class="picker" style="display:inline-block;">
           <picker name="plan_etime" mode="date" value="{{date}}" start="2020-03-01" end="2020-12-31" bindchange="bindDateChange">
-            <input class="input_planCon" value="{{date}}" name="plan_desc" placeholder="计划完成时间" />
+            <input class="input_planCon" value="{{date}}" name="plan_desc" placeholder="计划完成时间" placeholder-style ="color:#000;" />
           </picker>
       </view>
     </view>
@@ -47,19 +37,4 @@
   </view>
 </form>
 
-
 <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
-<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
-    <view class="page__bd">
-        <!-- <mp-form id="form" rules="{{rules}}" models="{{formData}}">
-            <mp-cells title="提交后表单项报错">
-                <mp-cell show-error prop="idcard" title="卡号" ext-class="">
-                    <input bindinput="formInputChange" data-field="idcard" class="weui-input" placeholder="请输入卡号"/>
-                </mp-cell>
-            </mp-cells>
-        </mp-form> -->
-        <!-- <view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
-        </view> -->
-    </view>
-</view>

@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/my/index",
     "pages/addplan/index",
     "pages/open/index",
     "pages/index/index",
     "pages/logs/logs",
     "pages/saymood/index",
-    "pages/grow/index",
-    "pages/my/index"
+    "pages/grow/index"
+
     
     
   ],

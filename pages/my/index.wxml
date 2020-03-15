@@ -1,2 +1,11 @@
 <!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<!-- 背景图 + 信息 start -->
+<view class="my_top">
+  <view style="display:flex;align-items:center;">
+    <view class="my_topPic">
+      <image src="/public/images/mini11.jpg"></image>
+    </view>
+  </view>
+</view>
+<!-- 背景图 + 信息 end -->
+
