@@ -49,3 +49,11 @@
   box-sizing:border-box;
 }
 /*-- 我的空间 end --*/
+/*-- 投诉建议 start --*/
+.tsjY{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-left:30rpx;
+}
+/*-- 投诉建议 end --*/
