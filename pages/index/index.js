@@ -36,6 +36,7 @@ Page({
     })
   },
   onLoad: function () {
+    //console.log(app);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -55,10 +56,14 @@ Page({
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
+          console.log('用户授权');
+          console.log(app.globalData.userInfo);
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
           })
+        },fail(){
+          console.log("s");
         }
       })
     }
