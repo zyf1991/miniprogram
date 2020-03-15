@@ -70,7 +70,9 @@ Page({
               this.setData({
                 hasUserInfo: true
               })
-              console.log(res);
+              wx.navigateTo({
+                url: '/pages/my/index',
+              })
             }
           })
         }
