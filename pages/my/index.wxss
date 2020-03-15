@@ -12,8 +12,15 @@
   background-size:100% 500rpx;
 }
 .my_topPic image{
-  width:40px;
-  height:40px;
+  width:80px;
+  height:80px;
   border-radius:50%;
+}
+.my_topName{
+  margin-left:40rpx;
+}
+.topName{
+  color:#fff;
+  font-size:18px;
 }
 /*-- 背景图 + 信息 end --*/
