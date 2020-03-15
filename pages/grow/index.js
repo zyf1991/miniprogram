@@ -1,18 +1,53 @@
 // pages/grow/index.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    planlist: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            
+            success: function (res) {
+              wx.request({
+                url: app.globalData.apiurl + 'plan',
+                data: {
+                  c_id: app.globalData.c_id
+                },
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success(res) {
+                  console.log(res);
+                  that.setData({
+                    planlist: res.data['data']
+                  });
 
+                 
+                }
+              })
+              
+            },
+            fail(){
+              //login
+            }
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -67,6 +102,32 @@ Page({
    * 用户添加计划
    */
   addPlan: function (event) {
-    wx.navigateTo({ url: '/pages/addplan/index', })
+    wx.navigateTo({ url: '/pages/addplan/index',})
+  },
+  //打卡
+  addSign: function (event) {
+    var id = event.currentTarget.dataset.elementId;
+    var c_id = event.currentTarget.dataset.elementCid;
+    wx.request({
+      url: app.globalData.apiurl + 'sign',
+      method:'post',
+      data: {
+        c_id: app.globalData.c_id,
+        plan_id: id,
+        api_token: app.globalData.apitoken,
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        //console.log(res);
+        var result = res.data;
+        wx.showToast({
+          title: result.message
+        })
+
+
+      }
+    })
   }
 })

@@ -5,8 +5,15 @@
     <text>星期日</text>
     <text>【点击查看成长计划使用说明】</text>
   </view>
-
-  
-
 </view>
+
+
+<view>
+<view wx:for="{{planlist}}" wx:key="key" wx:for-item="item">
+  图标: {{item.plan_title}}   <view id='addSign' data-element-id="{{item.c_id}}" data-element-cid="{{item.c_id}}" bindtap="addSign">打卡</view>
+        {{item.plan_etime}}
+        
+</view>
+</view>
+
 <view id="addPlan" data-hi="WeChat" bindtap="addPlan"> 添加计划 </view>
