@@ -1,6 +1,6 @@
 <!--pages/my/index.wxml-->
 <!-- 需要使用 button 来授权登录 -->
-<view wx:if="{{isHide}}">
+<view wx:if="{{hasUserInfo}}">
 <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">未登录/请登录</button>
 </view>
 <view wx:else>
