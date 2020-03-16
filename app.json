@@ -6,7 +6,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/saymood/index",
-    "pages/grow/index"
+    "pages/grow/index",
+    "pages/videoDetail/index"
 
     
     

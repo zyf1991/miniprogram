@@ -5,7 +5,7 @@
     </view>
 </view>
 <view class="bd_bnr">
-  <view>
+  <view bindtap="toplay" data-element-cid="{{item.c_id}}">
     <image src="/public/images/mini11.jpg"></image>
   </view>
 </view>

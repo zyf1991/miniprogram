@@ -75,5 +75,10 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  toplay:function(){
+    wx.navigateTo({
+      url: '/pages/videoDetail/index?id=6',
+    })
   }
 })
