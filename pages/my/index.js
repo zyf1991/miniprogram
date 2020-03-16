@@ -1,6 +1,7 @@
 // pages/my/index.js
 var app = getApp();
 console.log(wx.canIUse('button.open-type.getUserInfo'));
+//https://www.jianshu.com/p/d37a23fda138
 Page({
 
   /**

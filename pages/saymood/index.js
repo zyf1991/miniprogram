@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      
   },
 
   /**
@@ -62,5 +62,95 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  //客服咨询
+  handleContact(e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
+  },
+  // 拨打电话
+  // bodadianhua() {
+  //   wx.makePhoneCall({
+  //     phoneNumber: '18404731418' //客服电话
+  //   })
+  // },
+  // 添加客服微信
+  qxtj() {
+    wx.setClipboardData({
+      data: 'hxxad666030',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log('复制成功')
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  },
+  grcz() {
+    wx.setClipboardData({
+      data: 'hxxad666030',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log('复制成功')
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  },
+  qgzx() {
+    wx.setClipboardData({
+      data: 'hxxad666030',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log('复制成功')
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  },
+  jtgx() {
+    wx.setClipboardData({
+      data: 'hxxad666030',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log('复制成功')
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  },
+  zcrj() {
+    wx.setClipboardData({
+      data: 'hxxad666030',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log('复制成功')
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  },
+  qtqk() {
+    wx.setClipboardData({
+      data: 'hxxad666030',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log('复制成功')
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  },
 })
