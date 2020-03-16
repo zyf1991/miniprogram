@@ -10,7 +10,7 @@
 
 <view>
 <view wx:for="{{planlist}}" wx:key="key" wx:for-item="item">
-  图标: {{item.plan_title}}   <view id='addSign' data-element-id="{{item.c_id}}" data-element-cid="{{item.c_id}}" bindtap="addSign">打卡</view>
+  图标: {{item.plan_title}}   <view id='addSign' data-element-id="{{item.id}}" data-element-cid="{{item.c_id}}" bindtap="addSign">打卡</view>
         {{item.plan_etime}}
         
 </view>
