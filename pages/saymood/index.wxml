@@ -5,11 +5,11 @@
 <text >点击下面微信号即可复制，然后去添加好友的地方粘贴即可</text>
 
 
-<button class='button' bindtap='qxtj'>情绪调节:2501902696</button>
-<button class='button' bindtap='grcz'>个人成长:2501902696</button>
-<button class='button' bindtap='qgzx'>情感咨询:2501902696</button>
-<button class='button' bindtap='jtgx'>家庭关系:2501902696</button>
-<button class='button' bindtap='zcrj'>职场人际:2501902696</button>
-<button class='button' bindtap='qtqk'>其他情况:2501902696</button>
+<button class='button' bindtap='qxtj'>情绪调节:savor2020</button>
+<button class='button' bindtap='grcz'>个人成长:savor2020</button>
+<button class='button' bindtap='qgzx'>情感咨询:savor2020</button>
+<button class='button' bindtap='jtgx'>家庭关系:savor2020</button>
+<button class='button' bindtap='zcrj'>职场人际:savor2020</button>
+<button class='button' bindtap='qtqk'>其他情况:savor2020</button>
 <!-- <button class='button' bindtap='bodadianhua'>点击拨打客服电话</button> -->
 
