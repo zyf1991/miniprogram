@@ -4,8 +4,8 @@
     "pages/addplan/index",
     "pages/open/index",
     "pages/index/index",
-    "pages/logs/logs",
     "pages/saymood/index",
+    "pages/logs/logs",
     "pages/grow/index",
     "pages/videoDetail/index"
 

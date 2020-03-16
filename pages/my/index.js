@@ -101,6 +101,22 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+   /**
+   * 我的目标链接到成长页面
+   */
+  grow: function (event) {
+    wx.navigateTo({ url: '/pages/grow/index',})
+  },
+
+  /**
+   * 帮助中心点击链接到客服
+   */ 
+  handleContact(e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
+  },
+
   /**
    * 绑定用户信息
    */

@@ -39,6 +39,26 @@
   border-radius:8px 8px 0px 0px;
   background:#fff;
 }
+.bangzhuBTN{
+  position:unset;
+  display:unset;
+  border:0px!important;
+  margin:unset;
+  padding:unset;
+  box-sizing:unset;
+  font-size:unset;
+  text-align:unset;
+  color:unset;
+  font-weight:unset;
+  line-height:unset;
+  background:unset;
+}
+.bangzhuBTN::after{
+  position: unset;
+  border:0px!important;
+  width:unset;
+  height:unset;
+}
 /*-- 目标+收藏+中心 end --*/
 /*-- 我的空间 start --*/
 .myZoom{
