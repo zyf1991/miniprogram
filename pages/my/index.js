@@ -106,7 +106,9 @@ Page({
    * 我的目标链接到成长页面
    */
   grow: function (event) {
-    wx.navigateTo({ url: '/pages/grow/index',})
+    console.log(event);
+   
+    wx.redirectTo({ url: '/pages/grow/index',})
   },
 
   /**
