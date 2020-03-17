@@ -132,6 +132,12 @@ Component({
                     }
                   })
                 },fail(){
+                  wx.showToast({
+                    title: '请先登录'
+                  })
+                  wx.switchTab({
+                    url: '/pages/my/index',
+                  })
                   // wx.login({
                   //   success(res) {
                   //     if (res.code) {
@@ -178,22 +184,38 @@ Component({
           
       },
       submitForm() {
-          this.selectComponent('#form').validate((valid, errors) => {
-              console.log('valid', valid, errors)
+        wx.getUserInfo({
+          success: function (res) {
+            this.selectComponent('#form').validate((valid, errors) => {
+              //console.log('valid', valid, errors)
               if (!valid) {
-                  const firstError = Object.keys(errors)
-                  if (firstError.length) {
-                      this.setData({
-                          error: errors[firstError[0]].message
-                      })
-  
-                  }
-              } else {
-                  wx.showToast({
-                      title: '校验通过'
+                const firstError = Object.keys(errors)
+                if (firstError.length) {
+                  this.setData({
+                    error: errors[firstError[0]].message
                   })
+
+                }
+              } else {
+                wx.showToast({
+                  title: '校验通过'
+                })
               }
-          })
+            })
+          },fail(){
+            // wx.showToast({
+            //   title: '请先授权登录'
+            // })
+            wx.switchTab({
+              url: '/pages/my/index',
+            })
+          },          
+        })
+
+
+
+        
+          
       }
   }
 });

@@ -6,7 +6,7 @@
 </view>
 <view class="bd_bnr" >
   <view bindtap="detailPlay"  wx:for="{{courselist}}" wx:key="key" wx:for-item="item" data-element-id="{{item.id}}">
-    <image src="/public/images/mini11.jpg"></image>
+    <image src="{{item.video_cover}}"></image>
   </view>
 </view>
 <view class="flex-wrp" style="display:flex;flex-direction:row;">
@@ -32,11 +32,11 @@
   </view>
 </view>
 <view style="height:26rpx;background:#f0f1f5;"></view>
-<view class="tuiJView">
-  <image class="tuiJVieW-img" src="/public/images/tuiJ.png"></image>
+<view class="tuiJView" wx:for="{{courselistbtm}}" wx:key="key" wx:for-item="item">
+  <image  class="tuiJVieW-img" src="{{item.video_cover}}"></image>
   <view style="position:absolute;transform:translateX(10%)">
     <image class="tuiJVieW-Banimg" src="/public/images/mini11.jpg"></image>
-    <text class="tuiJTxt1">徒手胸肌训练初级</text>
-    <text class="tuiJTxt2">K2 初学 · 16分钟 · 2273.2 万人已学习</text>
+    <text class="tuiJTxt1">{{item.name}}</text>
+    <text class="tuiJTxt2">{{item.desc}}</text>
   </view>
 </view>

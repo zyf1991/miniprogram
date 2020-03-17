@@ -4,7 +4,10 @@ const app = getApp()
 
 Page({
   data: {
-    courselist:null
+    courselist:null,
+    courselistbtm:null,
+    inputShowed: false,
+    inputVal: ""
   },
   onLoad() {
     console.log(123);
@@ -23,8 +26,10 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        console.log(res.data['data'].free1);
         that.setData({
-          courselist:res.data['data']
+          courselist: res.data['data'].free1,
+          courselistbtm: res.data['data'].free2,
         });
       }
 
