@@ -1,24 +1,31 @@
 <!--pages/my/index.wxml-->
 <!-- 需要使用 button 来授权登录 -->
-<view wx:if="{{hasUserInfo}}">
+<!-- <view wx:if="{{hasUserInfo}}">
 <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">未登录/请登录</button>
-</view>
-<view wx:else>
-  <!-- 背景图 + 信息 start -->
+</view> -->
+
+
+
   <view class="my_top">
     <view style="display:flex;align-items:center;">
+      <view wx:if="{{!hasUserInfo}}">
+      <button style="font-size:12px" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">未登录/请登录</button>
+      </view>
+    <view wx:else>
+      <!-- 背景图 + 信息 start -->
       <view class="my_topPic">
-        <image src="{{avatarUrl}}"></image>
-      </view>
-      <view class="my_topName">
-        <view class="topName">
-          {{nickName}}
-          <view style="visibility:hidden;display:inline-block;margin-left:10rpx;padding:1px 12px;color:#000;font-size:14px;font-weight:700;border:1px solid #000;border-radius:20px;box-sizing:border-box;">编辑资料</view>
-        </view>
-        <view class="topMyZYM">
-          我的座右铭：但行好事、莫问前程
-        </view>
-      </view>
+            <image src="{{avatarUrl}}"></image>
+          </view>
+          <view class="my_topName">
+            <view class="topName">
+              {{nickName}}
+              <view style="visibility:hidden;display:inline-block;margin-left:10rpx;padding:1px 12px;color:#000;font-size:14px;font-weight:700;border:1px solid #000;border-radius:20px;box-sizing:border-box;">编辑资料</view>
+            </view>
+            <view class="topMyZYM">
+              我的座右铭：但行好事、莫问前程
+            </view>
+          </view>
+    </view>
     </view>
   </view>
   <!-- 背景图 + 信息 end -->
@@ -95,6 +102,5 @@
     </swiper>
   </view>
   <!-- 轮播图片 end -->
-</view>
 
 

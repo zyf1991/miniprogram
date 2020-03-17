@@ -68,7 +68,6 @@ App({
   globalData: {
     userInfo: null,
     apiurl:'http://local.miniadmin.com/api/',
-    apitoken:'aabbccdd',
-    hasUserInfo:false
+    apitoken:'aabbccdd'
   }
 })

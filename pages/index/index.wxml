@@ -4,8 +4,8 @@
         <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
     </view>
 </view>
-<view class="bd_bnr">
-  <view bindtap="toplay" data-element-cid="{{item.c_id}}">
+<view class="bd_bnr" >
+  <view bindtap="detailPlay"  wx:for="{{courselist}}" wx:key="key" wx:for-item="item" data-element-id="{{item.id}}">
     <image src="/public/images/mini11.jpg"></image>
   </view>
 </view>

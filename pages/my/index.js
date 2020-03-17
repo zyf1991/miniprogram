@@ -1,15 +1,20 @@
 // pages/my/index.js
-var app = getApp();
+const app = getApp();
 console.log(wx.canIUse('button.open-type.getUserInfo'));
 //https://www.jianshu.com/p/d37a23fda138
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    hasUserInfo: false,
+    hasUserInfo: wx.getUserInfo({
+      success:function(res){
+        hasUserInfo: true
+      },fail(){
+        hasUserInfo: false
+      }
+    }),
     avatarUrl:'',
     nickName:''
   },
@@ -19,32 +24,34 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.getStorage({
-      key: 'c_id',
-      success(res) {
-        app.globalData.c_id = res.data;
-        wx.navigateTo({
-          url: '/pages/index/index',
+    // 必须是在用户已经授权的情况下调用
+    wx.getUserInfo({
+      success: function(res) {
+        
+        var userInfo = res.userInfo;
+        var nickName = userInfo.nickName;
+        var avatarUrl = userInfo.avatarUrl;
+        that.setData({
+          avatarUrl:avatarUrl,
+          nickName:nickName,
+          hasUserInfo:true
         })
-      },
-      fail() {
-
       }
     })
 
-    // 必须是在用户已经授权的情况下调用
-      wx.getUserInfo({
-        success: function(res) {
-          
-          var userInfo = res.userInfo;
-          var nickName = userInfo.nickName;
-          var avatarUrl = userInfo.avatarUrl;
-          that.setData({
-            avatarUrl:avatarUrl,
-            nickName:nickName
-          })
-        }
-      })
+
+    // wx.getStorage({
+    //   key: 'c_id',
+    //   success(res) {
+    //     app.globalData.c_id = res.data;
+    //     wx.switchTab({
+    //       url: '/pages/index/index',
+    //     })
+    //   },
+    //   fail() {
+
+    //   }
+    // })
 
 
 
@@ -63,39 +70,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-
-
+      this.onLoad();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+      //console.log(1);
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function (res) {
-              this.setData({
-                hasUserInfo: true
-              })
-              wx.navigateTo({
-                url: '/pages/my/index',
-              })
-            }
-          })
-        }
-      }
-    })
+    //console.log(2);
   },
 
   /**
@@ -116,16 +105,16 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
   },
 
    /**
    * 我的目标链接到成长页面
    */
   grow: function (event) {
-    console.log(event);
-   
-    wx.redirectTo({ url: '/pages/grow/index',})
+    wx.switchTab({
+      url: '/pages/grow/index',
+    })
   },
 
   /**
@@ -140,9 +129,9 @@ Page({
    * 绑定用户信息
    */
   bindGetUserInfo(e) {
+    const that = this;
     if (e.detail.userInfo) {
       app.globalData.userInfo = e.detail.userInfo;
-      var that = this;
       wx.login({
         success(res) {
           if (res.code) {
@@ -156,7 +145,7 @@ Page({
                 avatarurl: e.detail.userInfo.avatarurl,
                 province: e.detail.userInfo.province,
                 city: e.detail.userInfo.city,
-                wxname: e.detail.nickName
+                wxname: e.detail.userInfo.nickName
               },
               header: {
                 'content-type': 'application/json' // 默认值
@@ -172,6 +161,8 @@ Page({
                 that.setData({
                   hasUserInfo: true
                 });
+
+                that.onShow();
               }
             })
           } else {
