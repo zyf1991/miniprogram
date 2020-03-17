@@ -9,13 +9,16 @@ Page({
    */
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    hasUserInfo: false
+    hasUserInfo: false,
+    avatarUrl:'',
+    nickName:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     wx.getStorage({
       key: 'c_id',
       success(res) {
@@ -28,6 +31,20 @@ Page({
 
       }
     })
+
+    // 必须是在用户已经授权的情况下调用
+      wx.getUserInfo({
+        success: function(res) {
+          
+          var userInfo = res.userInfo;
+          var nickName = userInfo.nickName;
+          var avatarUrl = userInfo.avatarUrl;
+          that.setData({
+            avatarUrl:avatarUrl,
+            nickName:nickName
+          })
+        }
+      })
 
 
 
