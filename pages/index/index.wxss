@@ -42,7 +42,7 @@
 }
 .tuiJView{
   position:relative;
-  padding: 125rpx 0 20rpx 0;
+  padding: 125rpx 40rpx 20rpx 40rpx;
   box-sizing: border-box;
 }
 .tuiJVieW-img{
