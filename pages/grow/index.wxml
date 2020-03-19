@@ -1,4 +1,5 @@
 <!--pages/grow/index.wxml-->
+<!-- 日期 + 星期 + 计划使用说明 start -->
 <view class="grow_top">
   <view>
     <text>2020年3月8日</text>
@@ -6,14 +7,37 @@
     <text>【点击查看成长计划使用说明】</text>
   </view>
 </view>
-
-
+<!-- 日期 + 星期 + 计划使用说明 end -->
+<view style="height:30rpx;background:#eee;"></view>
+<!-- 打卡系列 start -->
+<view class="grow_top" style="justify-content:space-between;padding:30rpx;padding-right:40rpx;background:#eee;border:0;box-sizing:border-box;">
+  <view>
+    <view style="font-size:14px;">
+      <image src="/public/images/input_planConImg1.png" style="vertical-align:middle;width:80rpx;height:80rpx;margin-right:15rpx;"></image>
+      减肥10斤
+    </view>
+    <view style="font-size:14px;margin:16rpx 0;">
+      <image src="/public/images/input_planConImg2.png" style="vertical-align:middle;width:80rpx;height:80rpx;margin-right:15rpx;"></image>
+      10天
+    </view>
+    <view style="font-size:14px;">
+      <image src="/public/images/input_planConImg3.png" style="vertical-align:middle;width:80rpx;height:80rpx;margin-right:15rpx;"></image>
+      1天
+    </view>
+  </view>
+  <view id="addSign" data-hi="WeChat" bindtap="addSign">
+    <image src="/public/images/daka.png" style="width:200rpx;height:200rpx;"></image>
+    <text style="font-size:14px;font-weight:400;">打卡</text>
+  </view>
+</view>
+<!-- 打卡系列 end -->
+<!-- 添加成长计划 start -->
 <view>
-<view wx:for="{{planlist}}" wx:key="key" wx:for-item="item">
-  图标: {{item.plan_title}}   <view id='addSign' data-element-id="{{item.id}}" data-element-cid="{{item.c_id}}" bindtap="addSign">打卡</view>
-        {{item.plan_etime}}
-        
+  <view wx:for="{{planlist}}" wx:key="key" wx:for-item="item">
+    图标: {{item.plan_title}}   <view id='addSign' data-element-id="{{item.id}}" data-element-cid="{{item.c_id}}" bindtap="addSign">打卡</view>
+          {{item.plan_etime}}
+      
+  </view>
 </view>
-</view>
-
-<view id="addPlan" data-hi="WeChat" bindtap="addPlan"> 添加计划 </view>
+<view id="addPlan" data-hi="WeChat" bindtap="addPlan" style="width:400rpx;height:120rpx;margin:0 auto;line-height:120rpx;text-align:center;font-weight:700;background:#eee;border-radius:40rpx;"> 添加成长计划 </view>
+<!-- 添加成长计划 start -->

@@ -1,15 +1,14 @@
 <!--pages/saymood/index.wxml-->
-<button open-type="contact" bindcontact="handleContact">直接倾述</button>
 
+<text style="display:block;padding:0 30rpx;line-height:1.7;">点击下面微信号即可复制，然后去添加好友的地方粘贴即可</text>
+<view style="width:100%;">
+  <button class='button' bindtap='qxtj' style="position:unset;width:100%;margin:20rpx 0;">情绪调节:savor2020</button>
+  <button class='button' bindtap='grcz' style="position:unset;width:100%;margin:20rpx 0;">个人成长:savor2020</button>
+  <button class='button' bindtap='qgzx' style="position:unset;width:100%;margin:20rpx 0;">情感咨询:savor2020</button>
+  <button class='button' bindtap='jtgx' style="position:unset;width:100%;margin:20rpx 0;">家庭关系:savor2020</button>
+  <button class='button' bindtap='zcrj' style="position:unset;width:100%;margin:20rpx 0;">职场人际:savor2020</button>
+  <button class='button' bindtap='qtqk' style="position:unset;width:100%;margin:20rpx 0;">其他情况:savor2020</button>
+  <!-- <button class='button' bindtap='bodadianhua'>点击拨打客服电话</button> -->
 
-<text >点击下面微信号即可复制，然后去添加好友的地方粘贴即可</text>
-
-
-<button class='button' bindtap='qxtj'>情绪调节:savor2020</button>
-<button class='button' bindtap='grcz'>个人成长:savor2020</button>
-<button class='button' bindtap='qgzx'>情感咨询:savor2020</button>
-<button class='button' bindtap='jtgx'>家庭关系:savor2020</button>
-<button class='button' bindtap='zcrj'>职场人际:savor2020</button>
-<button class='button' bindtap='qtqk'>其他情况:savor2020</button>
-<!-- <button class='button' bindtap='bodadianhua'>点击拨打客服电话</button> -->
-
+  <button type="primary" open-type="contact" bindcontact="handleContact" style="position:unset;width:100%;margin:20rpx 0;">直接倾述</button>
+</view>
