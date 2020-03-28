@@ -67,7 +67,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    apiurl:'http://local.miniadmin.com/api/',
-    apitoken:'aabbccdd'
+    //apiurl:'http://local.miniadmin.com/api/',
+    apiurl:'https://xiaoyuansanwei.cn/api/',
+    apitoken:'aabbccdd',
+    c_id:0
   }
 })

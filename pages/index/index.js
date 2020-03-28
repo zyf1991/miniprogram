@@ -26,7 +26,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data['data'].free2);
+        //console.log(res.data['data'].free2);
         that.setData({
           courselist: res.data['data'].free1,
           courselistbtm: res.data['data'].free2,

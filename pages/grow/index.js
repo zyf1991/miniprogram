@@ -13,6 +13,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getStorage({
+      key: 'c_id',
+      success: function(res) {
+        app.globalData.c_id = res.data['id'];
+        console.log(res);
+      },
+    })
+
     var that = this;
     wx.getSetting({
       success(res) {
@@ -102,7 +110,7 @@ Page({
    * 用户添加计划
    */
   addPlan: function (event) {
-    wx.navigateTo({ url: '/pages/addplan/index',})
+    wx.navigateTo({ url: '/pages/addplan/index'})
   },
   //打卡
   addSign: function (event) {

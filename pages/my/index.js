@@ -16,14 +16,41 @@ Page({
       }
     }),
     avatarUrl:'',
-    nickName:''
+    nickName:'',
+    courselist:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    const that = this;
+    // this.setData({
+    //     search: this.search.bind(this)
+    // })
+
+    wx.request({
+      url: app.globalData.apiurl + "getcourse",
+      method: 'post',
+      data: {
+        showpostion: 3,
+        api_token: app.globalData.apitoken,
+
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        //console.log(res.data['data']);
+        that.setData({
+          
+          courselist: res.data['data'],
+        });
+      }
+
+    })
+
+
     // 必须是在用户已经授权的情况下调用
     wx.getUserInfo({
       success: function(res) {
@@ -36,22 +63,25 @@ Page({
           nickName:nickName,
           hasUserInfo:true
         })
+
+        wx.getStorage({
+          key: 'c_id',
+          success(res) {
+            //console.log(res);
+            app.globalData.c_id = res.data;
+            // wx.switchTab({
+            //   url: '/pages/index/index',
+            // })
+          },
+          fail() {
+            console.log(1111);
+          }
+        })
       }
     })
 
 
-    // wx.getStorage({
-    //   key: 'c_id',
-    //   success(res) {
-    //     app.globalData.c_id = res.data;
-    //     wx.switchTab({
-    //       url: '/pages/index/index',
-    //     })
-    //   },
-    //   fail() {
-
-    //   }
-    // })
+    
 
 
 
@@ -63,7 +93,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -99,6 +129,14 @@ Page({
    */
   onReachBottom: function () {
 
+  },
+
+  detailPlay: function (event) {
+    var id = event.currentTarget.dataset.elementId;
+    //console.log(id);
+    wx.navigateTo({
+      url: '/pages/videoDetail/index?id=' + id,
+    })
   },
 
   /**
@@ -158,6 +196,8 @@ Page({
                   key: "c_id",
                   data: data.id
                 })
+                
+
                 that.setData({
                   hasUserInfo: true
                 });
